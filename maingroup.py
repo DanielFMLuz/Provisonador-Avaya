@@ -1,6 +1,6 @@
 from tkinter import Tk, Label, Entry, Button
 from functools import partial
-from automatizacao import automatizar_paginas
+from grupo1 import automatizar_paginas
 
 def start_automatizacao(enderecos_ip):
     automatizar_paginas(enderecos_ip)

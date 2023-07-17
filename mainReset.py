@@ -1,6 +1,6 @@
 from tkinter import Tk, Label, Entry, Button
 from functools import partial
-from automatizacao import automatizar_paginas
+from reset import automatizar_paginas
 
 def start_automatizacao(enderecos_ip):
     automatizar_paginas(enderecos_ip)
@@ -12,7 +12,7 @@ def main():
         window.destroy()  # Fecha a janela
         start_automatizacao(enderecos_ip)  # Chama a função de automatização com os números IPs
 
-        # Configuração da janela principal
+    # Configuração da janela principal
     window = Tk()
     window.title("Automação de Páginas")
     window.geometry("300x200")
