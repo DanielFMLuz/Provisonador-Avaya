@@ -39,9 +39,6 @@ def automatizar_paginas(enderecos_ip):
             
                 # Clicar no IP CONFIGURATION
                 ip_config_element.click()
-                # Clicar no IP CONFIGURATION
-                driver.find_element(By.ID, 'IPConfiguration').click()
-
                 time.sleep(1)
 
                 # Clicar no Services
@@ -64,13 +61,17 @@ def automatizar_paginas(enderecos_ip):
                 # Salvar e aguardar 5 segundos
                 driver.find_element("xpath", '/html/body/form/table/tbody/tr/td[1]/div[2]/span/input[1]').click()
                 driver.switch_to.default_content()  # Sair do iframe
-                time.sleep(5)
+                time.sleep(4)
+                
+                # Reiniciar
+                driver.find_element(By.XPATH, '/html/body/form/table/tbody/tr[2]/td[1]/ul/li[21]/a').click()
+                # Aguardar o alerta e aceitar
+                driver.switch_to.alert.accept()
 
             else:
                 # Executar o caminho alternativo fornecido
                 # Reset
                 driver.find_element(By.XPATH, '/html/body/form/table/tbody/tr[2]/td[1]/ul/li[17]/a').click()
-
                 # Aguardar o alerta e aceitar
                 driver.switch_to.alert.accept()
 
